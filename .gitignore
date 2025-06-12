@@ -9,7 +9,6 @@ __pycache__/
 .venv/
 .env
 *.env
-.venv
 
 # Streamlit cache e estado
 .streamlit/
