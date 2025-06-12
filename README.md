@@ -114,7 +114,7 @@ OPENROUTER_API_KEY=sua-chave-api-aqui
 
 4. Receba a resposta baseada nos dados do CSV.
 
-![Resposta](imagens/image-5.png)
+![Resposta](imagens/image-4.png)
 
 ---
 
