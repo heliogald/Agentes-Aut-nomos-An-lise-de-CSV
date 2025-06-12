@@ -14,17 +14,18 @@ Este projeto implementa um **Agente de IA baseado em RAG (Retrieval-Augmented Ge
 
 ## 🗂️ Estrutura do Projeto
 
+```
 📦 agente-rag-csv
- ├── app.py # Interface principal com Streamlit
- ├── rag_agent.py # Lógica do agente RAG
- ├── utils/ │ 
- └── extract_zip.py # Extração de arquivos ZIP 
- ├── .streamlit/ # Configurações da interface 
- ├── requirements.txt # Dependências do Python
- ├── Dockerfile # Dockerfile da aplicação
- ├── docker-compose.yml # Configuração opcional via Docker Compose
- └── README.md # Este arquivo
-
+├── app.py                 # Interface principal com Streamlit
+├── rag_agent.py          # Lógica do agente RAG
+├── utils/
+│   └── extract_zip.py    # Extração de arquivos ZIP
+├── .streamlit/           # Configurações da interface
+├── requirements.txt      # Dependências do Python
+├── Dockerfile            # Dockerfile da aplicação
+├── docker-compose.yml    # Configuração opcional via Docker Compose
+└── README.md             # Este arquivo
+```
 
 ---
 
@@ -53,17 +54,23 @@ cd Agentes-Aut-nomos-An-lise-de-CSV
 # Construir e executar com Docker
 docker build -t agente-rag .
 docker run --env-file .env -p 8501:8501 agente-rag
+```
 
 💡 Ou utilizando Docker Compose:
 
-bash
+```bash
 docker-compose --env-file .env up --build
-🧪 Executando Localmente (sem Docker)
-bash
+```
+
+---
+
+## 🧪 Executando Localmente (sem Docker)
+
+```bash
 # Ative o ambiente virtual
 python -m venv .venv
 source .venv/bin/activate  # Linux/Mac
-.venv\Scripts\activate     # Windows
+.venv\Scripts\activate   # Windows
 
 # Instale as dependências
 pip install -r requirements.txt
@@ -71,58 +78,68 @@ pip install -r requirements.txt
 # Criar o arquivo .env (ver abaixo)
 
 # Inicie a aplicação
-
 streamlit run app.py
+```
 
-🔐 Configuração do .env
+---
 
-Para utilizar o modelo de linguagem (LLM), você precisa fornecer uma chave de API. O projeto está integrado com o provedor OpenRouter.ai, mas você pode usar qualquer provedor compatível com LangChain.
+## 🔐 Configuração do `.env`
 
-Crie um arquivo .env na raiz do projeto com:
+Para utilizar o modelo de linguagem (LLM), você precisa fornecer uma chave de API. O projeto está integrado com o provedor [OpenRouter.ai](https://openrouter.ai), mas você pode usar qualquer provedor compatível com LangChain.
 
-env
+Crie um arquivo `.env` na raiz do projeto com:
+
+```env
 OPENROUTER_API_KEY=sua-chave-api-aqui
+```
 
-🔑 Importante: Crie sua chave gratuita ou paga em OpenRouter.ai.
+🔑 **Importante:** Crie sua chave gratuita ou paga em: [OpenRouter.ai](https://openrouter.ai)
 
-🧠 Como Usar
+---
 
-Faça upload de um arquivo .zip contendo arquivos .csv.
+## 🧠 Como Usar
 
-![alt text](image.png)
+1. Faça upload de um arquivo `.zip` contendo arquivos `.csv`.
 
-![alt text](image-1.png)
+![Upload ZIP](imagens/image.png)
+![CSV Detectado](imagens/image-1.png)
 
-O agente extrai os dados e os carrega automaticamente.
+2. O agente extrai os dados e os carrega automaticamente.
 
-![alt text](image-2.png)
+![Carregamento](imagens/image-2.png)
 
-Digite sua pergunta em linguagem natural.
+3. Digite sua pergunta em linguagem natural.
 
-![alt text](image-3.png)
+![Pergunta](imagens/image-3.png)
 
-Receba a resposta baseada nos dados do CSV.
+4. Receba a resposta baseada nos dados do CSV.
 
-![alt text](image-4.png)
+![Resposta](imagens/image-5.png)
 
-🛠 Tecnologias Utilizadas
+---
 
-Python – Linguagem principal do projeto.
+## 🛠 Tecnologias Utilizadas
 
-Streamlit – UI interativa.
+- **Python** – Linguagem principal do projeto
+- **Streamlit** – UI interativa
+- **LangChain** – Pipeline RAG
+- **Pandas** – Manipulação de CSVs
+- **dotenv** – Variáveis de ambiente
+- **Docker** – Contêiner da aplicação
 
-LangChain – Pipeline RAG.
+---
 
-Pandas – Manipulação de CSVs.
+## ❓ Suporte
 
-dotenv – Variáveis de ambiente.
+Achou algum bug ou tem sugestões?  
+📬 Crie uma issue ou entre em contato: [helio.galdino@gmail.com](mailto:helio.galdino@gmail.com)
 
-Docker – Contêiner da aplicação.
+---
 
-❓ Suporte
-Achou algum bug ou tem sugestões? 📬 Crie uma issue ou entre em contato: helio.galdino@gmail.com
+## 📃 Licença
 
-📃 Licença
-Este projeto está sob a licença MIT. Sinta-se à vontade para usar, modificar e distribuir.
+Este projeto está sob a licença **MIT**. Sinta-se à vontade para usar, modificar e distribuir.
 
-Happy Coding! 🚀
+---
+
+> Happy Coding! 🚀
